@@ -1,0 +1,70 @@
+export const endpoints = {
+  healthCheck: "/health-check",
+  grwb: {
+    linkInitiate: "/external/grwb/link/initiate",
+    linkVerify: "/external/grwb/link/verify",
+    linkUnlink: "/external/grwb/link/unlink",
+    sendGRWBInterationMailRequest: "/external/grwb/interactions",
+    getGRWBUser: "/external/grwb/user-details",
+  },
+  auth: {
+    login: "/public/user/login",
+    logout: "/public/user/logout",
+    signupInitiate: "/public/user/signup/initiate",
+    signupVerify: "/public/user/signup/verify",
+    oauthGoogle: "/public/user/oauth/google",
+    oauthTwitter: "/public/user/oauth/twitter",
+    linkEmailInitiate: "/external/auth/link/email/initiate",
+    linkEmailVerify: "/external/auth/link/email/verify",
+    oauthGoogleLink: "/external/auth/oauth/google/link",
+    oauthTwitterLink: "/external/auth/oauth/twitter/link",
+    passwordResetInitiate: "/public/user/password/forgot/initiate",
+    passwordResetVerify: "/public/user/password/forgot/verify",
+    passwordResetSet: "/public/user/password/forgot/set",
+  },
+  profile: {
+    me: "/external/auth/me",
+    meUpdate: "/external/profile",
+    avatar: "/external/profile/avatars",
+    usernameAvailability: "/external/profile/username/hello/availability",
+  },
+  trial: {
+    topRecommendations: "/external/trial/top-recommendations",
+    getAllTrials: "/external/trial/list",
+    getTrialById: (id: string) => `/external/trial/${id}`,
+    trialCast: "/external/trial/cast",
+  },
+  location: {
+    getAllCities: "/common/location/cities",
+    getAllStates: "/common/location/states",
+    getAllCountries: "/common/location/countries",
+  },
+  preference: {
+    getQuestions: "/external/preference/mapping",
+    submitPreference: "/external/preference/mapping",
+  },
+  poll: {
+    getPolls: "/external/poll",
+    createPolls: "/external/poll",
+    pollCast: "/external/poll/cast",
+    pollMarkSeen: "/external/poll/mark-seen",
+    myPolls: {
+      getAllMyPolls: "/external/poll/my-polls",
+      getMyPollsStats: "/external/poll/my-polls/stats",
+      getMyPollById: (id: string) => `/external/poll/my-polls/${id}`,
+      deleteMyPollById: (id: string) => `/external/poll/${id}`,
+    },
+  },
+  assets: {
+    sellIntent: "/external/actions/sell-intent",
+    getAssetsInfo: "/common/assets/coins",
+    getLedgers: "/external/asset-ledger/all",
+    getSellIntentLedgers: "/external/asset-ledger/sell-intents",
+    getSellIntentStats: "/external/asset-ledger/sell-intent-stats",
+  },
+  web3: {
+    createXamanPayload: "/external/web3/createxamanpayload",
+    getXamanPayload: (uuid: string) =>
+      `/external/web3/getxamanpayload?uuid=${encodeURIComponent(uuid)}`,
+  },
+};

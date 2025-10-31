@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../xpollCluster/xpoll-user/src"
+		}
+	],
+	"settings": {}
+}
