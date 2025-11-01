@@ -139,35 +139,29 @@ const Landing = () => {
   };
 
   return (
-    <div className="bg-white min-h-full">
-      <section className="px-4 pt-4 pb-2 bg-white">
-        <div className="flex items-center gap-2 text-gray-900">
-          <MapPin className="w-4 h-4 shrink-0" />
-          <p className="font-semibold text-sm truncate">
-            25-B, Anonymous Nagar
-          </p>
-        </div>
-
-        <div className="mt-2 flex items-center bg-gray-100 rounded-xl px-3 py-2">
-          <Search className="w-4 h-4 text-gray-500" />
-          <input
-            className="ml-2 flex-1 bg-transparent outline-none text-sm placeholder:text-gray-500"
-            placeholder="Search for restaurant or a dish…"
-          />
-        </div>
-
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <button className="px-4 py-2 rounded-full text-sm font-medium bg-red-500 text-white">
-            Delivery
-          </button>
-          <button className="px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-800">
-            Self Pickup
-          </button>
-        </div>
+    <div className="px-4 lg:py-10 min-h-full">
+      <section className="hidden lg:flex items-center gap-2 text-gray-900 py-2">
+        <MapPin className="w-4 h-4 shrink-0" />
+        <p className="font-semibold text-sm truncate">25-B, Anonymous Nagar</p>
       </section>
+      <section className="hidden lg:flex items-center bg-white/50 rounded-full px-3 py-2">
+        <Search className="w-4 h-4 text-gray-500" />
+        <input
+          className="ml-2 flex-1 bg-transparent outline-none text-sm placeholder:text-gray-500"
+          placeholder="Search for restaurant or a dish…"
+        />
+      </section>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <button className="px-4 py-2 rounded-full text-sm font-medium bg-red-500 text-white">
+          Delivery
+        </button>
+        <button className="px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-800">
+          Self Pickup
+        </button>
+      </div>
 
       <motion.section
-        className="px-4 mt-3"
+        className="mt-3"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
@@ -192,7 +186,7 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      <section className="px-4 mt-5 pb-24">
+      <section className="mt-5 pb-24">
         <h2 className="font-semibold text-lg mb-3">Eat what makes you happy</h2>
 
         <div className="grid grid-cols-4 gap-4">

@@ -7,7 +7,7 @@ import { useApiQuery } from "@/hooks/useApiQuery";
 import { useMemo } from "react";
 import xlogo from "@/assets/logo.png";
 import xOctopus from "@/assets/sidebar.png";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin, Search } from "lucide-react";
 import { motion } from "framer-motion"; // ⬅️ added
 
 const containerVariants = cva("", {
@@ -108,21 +108,12 @@ export default function ResponsiveNav({
               alt={filteredmeData?.apps?.xpoll?.username}
               className="w-14 h-14 rounded-full object-cover object-top border-2 border-white"
             />
-            {/* LVL Badge */}
-            <span className="absolute -bottom-1 left-2 bg-[#00BFA6] text-white text-[11px] font-semibold px-2 py-0.5 rounded-full">
-              LVL {filteredmeData?.level}
-            </span>
           </div>
-          {/* Greeting */}
-          <span className="font-semibold text-sm flex items-center gap-1">
-            Hello, {filteredmeData?.apps?.xpoll?.username ?? "User"}!
-            <ArrowUpRight />
-          </span>
         </section>
 
         {/* ⬅️ animated sidebar nav */}
         <motion.nav
-          className="flex flex-col"
+          className="flex flex-col gap-2"
           variants={containerMotion}
           initial="hidden"
           animate="show"
@@ -240,17 +231,24 @@ export default function ResponsiveNav({
             <img
               src={filteredmeData?.apps?.xpoll?.avatar?.imageUrl ?? logo}
               alt={filteredmeData?.apps?.xpoll?.username}
-              className="w-16 h-16 rounded-full object-cover object-top border-2 border-white"
+              className="w-10 h-10 rounded-full object-cover object-top border-2 border-white"
             />
-            {/* LVL Badge */}
-            <span className="absolute -bottom-1 left-3 bg-[#00BFA6] text-white text-[11px] font-bold px-2 py-0.5 rounded-full">
-              LVL {filteredmeData?.level}
-            </span>
           </div>
-          {/* Greeting */}
-          <span className="font-bold text-lg text-gray-900">
-            Hello, {filteredmeData?.apps?.xpoll?.username ?? "User"}!
-          </span>
+          <section className="flex flex-col gap-1">
+            <section className="flex items-center gap-2 text-gray-900">
+              <MapPin className="w-4 h-4 shrink-0" />
+              <p className="font-semibold text-sm truncate">
+                25-B, Anonymous Nagar
+              </p>
+            </section>
+            <section className="flex items-center bg-white/50 rounded-full px-3 py-1.5 text-sm">
+              <Search className="w-4 h-4 text-gray-500" />
+              <input
+                className="ml-2 flex-1 bg-transparent outline-none text-sm placeholder:text-gray-500"
+                placeholder="Search for restaurant or a dish…"
+              />
+            </section>
+          </section>
         </section>
 
         {/* Right: App Icon */}
@@ -269,7 +267,7 @@ export default function ResponsiveNav({
     <motion.nav
       className={cn(
         containerVariants({ variant }),
-        "lg:hidden w-full max-h-[3.75rem] p-2 bg-[#25FBEC] flex justify-between items-center",
+        "lg:hidden w-full max-h-[3.75rem] p-2 bg-[#25FBEC] flex justify-evenly items-center ",
         className
       )}
       aria-label="Bottom navigation"
